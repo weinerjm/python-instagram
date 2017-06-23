@@ -7,7 +7,6 @@ SEARCH_ACCEPT_PARAMETERS = ["q", "count"]
 
 SUPPORTED_FORMATS = ['json']
 
-
 class InstagramAPI(oauth2.OAuth2API):
 
     host = "api.instagram.com"
@@ -110,7 +109,7 @@ class InstagramAPI(oauth2.OAuth2API):
                 accepts_parameters=MEDIA_ACCEPT_PARAMETERS + ['user_id', 'min_id', 'max_timestamp', 'min_timestamp'],
                 root_class=Media,
                 paginates=True)
-    
+ 
     user_self_media = bind_method(
                 path="/users/self/media/recent",
                 accepts_parameters=MEDIA_ACCEPT_PARAMETERS + ['min_id'],
